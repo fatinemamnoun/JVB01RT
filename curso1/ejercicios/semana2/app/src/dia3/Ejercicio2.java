@@ -1,9 +1,9 @@
 package dia3;
 
-public class Ejercicio2
+public class Ejercicio2 {
 
 
-public class Ejercicio1B {
+public class Ejercicio2 {
     public static void main(String[] args) {
         generaQuinielasConProbabilidades(10);
     }
@@ -13,7 +13,7 @@ public class Ejercicio1B {
         for (int i = 0; i < numeroResultados; i++) {
             // Genéro número random entre 0 y 9
             int numRandom = (int) Math.floor(Math.random() * 9);
-            switch (numRandom){
+            switch (numRandom) {
                 case 0:
                 case 1:
                 case 2:
@@ -39,5 +39,5 @@ public class Ejercicio1B {
             }
 
             System.out.println("Resultado " + (i + 1) + " = " + resultado);
-{
-}
+        }
+    }
