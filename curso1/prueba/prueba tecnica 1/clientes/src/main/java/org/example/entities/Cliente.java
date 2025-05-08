@@ -34,7 +34,7 @@ public class Cliente {
 
 
     //constructores
-    public Cliente() {
+    public Cliente(String nombre) {
     }
 
     public Cliente(Integer id, String nombre, String apellidos, String sexo, String ciudad, String fechaDeNacimiento, int telefono, String email) {
@@ -46,6 +46,9 @@ public class Cliente {
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.telefono = telefono;
         Email = email;
+    }
+
+    public Cliente(int i) {
     }
 
 //getters and setters

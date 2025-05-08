@@ -8,13 +8,10 @@ import java.util.Scanner;
 public class MenuGestionCliente {
 
 
-
     public static void main(String[] args) {
-        Scanner scanner =new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         ClienteController clienteController = new ClienteController();
-        int opcion =0;
-
-
+        int opcion = 0;
 
 
         do {
@@ -40,7 +37,7 @@ public class MenuGestionCliente {
                 case 2 -> {
                     System.out.print("Ingrese ID del cliente a buscar: ");
                     int id = scanner.nextInt();
-                    Cliente clienteEncontrado = clienteController.findOne(int);
+                    Cliente clienteEncontrado = clienteController.findOne(1);
                     System.out.println(clienteEncontrado != null ? clienteEncontrado : "Cliente no encontrado.");
                 }
                 case 3 -> {
@@ -49,7 +46,7 @@ public class MenuGestionCliente {
                     scanner.nextLine();
                     System.out.print("Ingrese nuevo nombre: ");
                     String nuevoNombre = scanner.nextLine();
-                    Cliente clienteActualizar = new Cliente(int idActualizar, nuevoNombre);
+                    Cliente clienteActualizar = new Cliente(2);
                     clienteController.update(clienteActualizar);
                     System.out.println("Cliente actualizado.");
                 }
