@@ -34,7 +34,9 @@ public class Cliente {
 
 
     //constructores
-    public Cliente(String nombre) {
+
+
+    public Cliente() {
     }
 
     public Cliente(Integer id, String nombre, String apellidos, String sexo, String ciudad, String fechaDeNacimiento, int telefono, String email) {
@@ -48,8 +50,7 @@ public class Cliente {
         Email = email;
     }
 
-    public Cliente(int i) {
-    }
+
 
 //getters and setters
 
@@ -118,11 +119,17 @@ public class Cliente {
     }
 
 
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", fechaDeNacimiento='" + fechaDeNacimiento + '\'' +
+                ", telefono=" + telefono +
+                ", Email='" + Email + '\'' +
+                '}';
+    }
 }

@@ -3,6 +3,7 @@ package org.example;
 import org.example.controllers.ClienteController;
 import org.example.entities.Cliente;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,22 +24,18 @@ public class Main {
 
 //crear clientes
         //id null para dejar a la bd poner su propio id
+        /*List<Cliente> listadoClientes =new ArrayList<>();
+        listadoClientes.add(new Cliente(1, "Antonio", "Gonzalez Diaz", "M", "Madrid", "09-09-1999", 6122222, "g.diaz@gmail.com"));
+        listadoClientes.add(new Cliente(2,"Roberto","Ronaldo","M","Barcelona","16-06-2004",062555,"r.ronaldo@gmail.com"));
+        listadoClientes.add(new Cliente(3,"Cesar","Ronaldo","M","Barcelona","16-08-2003",0625556,"c.ronaldo@gmail.com"));
+        listadoClientes.add(new Cliente(4,"Mercedes","Ronaldo","M","Barcelona","16-07-2001",0655556,"m.ronaldo@gmail.com"));*/
 
-        Cliente nuevoCliente = new Cliente(null, "Donald", "Trump Walker",
-                "M", "Barcelona", "14/06/1946", 6177777,
-                "d.trump@gmail.com");
+        Cliente nuevoCliente = new Cliente(null, "Cesar", "Ronaldo",
+                "M", "Barcelona", "16-08-2003", 6125556,
+                "dc.ronaldo@gmail.com");
 
 
         ClienteController.create(nuevoCliente);
-
-        /*Arraylist initial
-        ("'1', 'g.diaz@gmail.com', 'Gonzalez Diaz', 'Madrid', '09-09-1999', 'Antonio', 'M', NULL, '6122222')
-        ('2', 'g.diaz@gmail.com', 'Gonzalez Diaz', 'Madrid', '09-09-1999', 'Antonio', 'M', NULL, '6122222')
-        ('3', 'n.gomes@gmail.com', 'Valdes Gomes', 'Alicante', '10-10-2001', 'Natalia', 'F', NULL, '6123333')
-        ('4', 'a.nathan@gmail.com', 'Nathan Vincent', 'Gijon', '11/11/1991', 'Aron', 'M', NULL, '6166666')
-         (5, "Donald", "Trump Walker" ,"M", "Barcelona", "14/06/1946", 6177777, "d.trump@gmail.com");*/
-
-
 
 
   // buscar un cliente por Id
@@ -67,7 +64,7 @@ public class Main {
 
   // delete data id 2 ('2', 'g.diaz@gmail.com', 'Gonzalez Diaz', 'Madrid', '09-09-1999', 'Antonio', 'M', NULL, '6122222')
 
-    Integer IdRemove = 2;
+    Integer IdRemove = 9;
     clienteController.delete(IdRemove);
         System.out.println("se elimino el cliente con id " + IdRemove);
 

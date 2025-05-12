@@ -30,7 +30,7 @@ public class MenuGestionCliente {
                 case 1 -> {
                     System.out.print("Ingrese nombre del cliente: ");
                     String nombre = scanner.nextLine();
-                    Cliente nuevoCliente = new Cliente(nombre);
+                    Cliente nuevoCliente = new Cliente();
                     clienteController.create(nuevoCliente);
                     System.out.println("Cliente creado correctamente.");
                 }
@@ -46,7 +46,7 @@ public class MenuGestionCliente {
                     scanner.nextLine();
                     System.out.print("Ingrese nuevo nombre: ");
                     String nuevoNombre = scanner.nextLine();
-                    Cliente clienteActualizar = new Cliente(2);
+                    Cliente clienteActualizar = new Cliente();
                     clienteController.update(clienteActualizar);
                     System.out.println("Cliente actualizado.");
                 }
