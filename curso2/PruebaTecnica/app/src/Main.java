@@ -1,7 +1,5 @@
 import entities.Vuelo;
 import utils.FiltroVuelos;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +9,15 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        /* aqui he podido probar con 2024 y 2026 y me salio aue no hay vuelos disponibles y tambien probe con y sin fechaDesde y fechaHasta y me salio bien
-        final LocalDate fechaDesde =LocalDate.of(2025, 1, 1) tambien con los dos null me devolvio to do*/
-         final LocalDate fechaDesde = null;// no lleva static porque dentro de un metodo
-         final LocalDate fechaHasta = LocalDate.of(2025, 11, 30);// no lleva static porque dentro de un metodo
+        // aqui he podido probar con 2024 y 2026 y me salio que no hay vuelos disponibles y tambien probe con y sin fechaDesde y fechaHasta y me salio bien
+        // lo deje en null y comente las fechas para poder probar lo del null-> devolver todos los vuelos ordenados por id.
 
 
-     // lista de vuelos
+        final LocalDate fechaDesde =null;//LocalDate.of(2025,7,1) ; // no lleva static porque dentro de un metodo
+        final LocalDate fechaHasta =null;//LocalDate.of(2025,12,30); // no lleva static porque dentro de un metodo
+
+        // lista de vuelos
+
         List<Vuelo> vuelos =new ArrayList<>();
         vuelos.add(new Vuelo(1,"k122","AirKorea","Seoul","Madrid",LocalDate.of(2025,5,20),LocalDate.of(2025,5,21)));
         vuelos.add(new Vuelo(2,"D122","AirNippon","Tokyo","Hanoi",LocalDate.of(2025,6,20),LocalDate.of(2025,6,21)));
@@ -31,22 +31,27 @@ public class Main {
         vuelos.add(new Vuelo(10,"R622","AirCongo","Kinshasa","Paris",LocalDate.of(2025,3,20),LocalDate.of(2025,3,21)));
 
 
+        String fechaDesdeTexto = (fechaDesde != null) ? fechaDesde.toString() : "sin fecha de inicio";
+        String fechaHastaTexto = (fechaHasta != null) ? fechaHasta.toString() : "sin fecha de fin";
+
+
+        System.out.println("Buscando vuelos disponibles entre " + fechaDesdeTexto + " y " + fechaHastaTexto + ":");
+
         // Aplicar el filtro de vuelos
 
         List<Vuelo> vuelosFiltrados = FiltroVuelos.filtrar(vuelos, fechaDesde, fechaHasta);
 
-        // aplique todas las posibilidades y me salio to do bien
+        // Mostrar resultados
+
         if (vuelosFiltrados.isEmpty()) {
             System.out.println("No hay vuelos disponibles.");
         } else {
-            System.out.println("Vuelos filtrados entre " + fechaDesde + " y " + fechaHasta + ":");
+            System.out.println("Vuelos disponibles:");
             vuelosFiltrados.forEach(System.out::println);
-
-
         }
-
-
-
-
     }
 }
+
+
+
+
